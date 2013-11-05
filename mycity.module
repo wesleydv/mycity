@@ -1,0 +1,24 @@
+<?php
+/**
+ * @file
+ * My City module file.
+ */
+
+/**
+ * Implements hook_menu().
+ */
+function mycity_menu() {
+  $items['admin/config/regional/my-city'] = array(
+    'title' => 'My City settings',
+    'description' => 'Change the My City settings.',
+    'route_name' => 'mycity.settings',
+  );
+
+  $items['my-city'] = array(
+    'title' => 'My City',
+    'description' => 'Shows the city.',
+    'route_name' => 'mycity.page',
+  );
+
+  return $items;
+}

@@ -1,0 +1,13 @@
+mycity.settings:
+  path: '/admin/config/regional/my-city'
+  defaults:
+    _form: 'Drupal\mycity\Form\SettingsForm'
+  requirements:
+    _permission: 'administer site configuration'
+
+mycity.page:
+  path: '/my-city'
+  defaults:
+    _content: 'Drupal\mycity\Controller\MyCityController::page'
+  requirements:
+    _access: 'TRUE'
