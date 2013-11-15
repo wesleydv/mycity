@@ -41,7 +41,8 @@ class SettingsForm extends ConfigFormBase {
   public function validateForm(array &$form, array &$form_state) {
     // Check the length of the city.
     if (strlen($form_state['values']['city']) < 4) {
-      form_set_error('city', t('City must at least be four characters long.'));
+      // Not quite sure it there is no better way of getting the fromBuilder.
+      \Drupal::formBuilder()->setError($form['city'], t('City must at least be four characters long.'));
     }
 
     parent::validateForm($form, $form_state);
